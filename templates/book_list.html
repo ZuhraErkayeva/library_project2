@@ -11,6 +11,7 @@
                     <span class="book-title"><a href="{% url 'detail' pk=book.pk %}">{{ book.title }}</a></span>
                     <a href="{% url 'delete' pk=book.pk %}"><i class="bi bi-trash-fill"></i></a>
                     <a href="{% url 'update' pk=book.pk %}"><i class="bi bi-pencil-square"></i></a>
+                    <a class="btn btn-primary" href="{% url 'users:login' %}" role="button">Logout</a>
                 </li>
                 {% endfor %}
 
