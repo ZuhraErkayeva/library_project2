@@ -16,7 +16,7 @@
                     <h2>Ro'yhatdan o'tish</h2>
                 </div>
                 <div class="card-body" style="background:#81d3e7">
-                    <form method="post" action="{% url 'users:login' %}">
+                    <form method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button type="submit" class="btn btn-primary btn-block">Ro'yhatdan o'tish</button>

@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.password_validation import validate_password
+
 
 class RegisterForm(UserCreationForm):
     def __init__(self,*args,**kwargs):
@@ -11,13 +13,15 @@ class RegisterForm(UserCreationForm):
         label = "Parol kiriting",
         widget = forms.PasswordInput(
             attrs={'class':'form-control'}
-        )
+        ),
+        validators=[validate_password]
     )
     password2 = forms.CharField(
         label="Parolni tasdiqlang",
         widget=forms.PasswordInput(
             attrs={'class': 'form-control'}
-        )
+        ),
+        validators=[validate_password]
     )
     class Meta:
         model = User
